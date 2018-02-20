@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements EbooksAdapter.Ebo
         mEbooksRecylerView.setAdapter(mEbooksAdapter);
 
         loadEbooksData();
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     public void loadEbooksData(){
