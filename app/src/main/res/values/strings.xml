@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">ebooks_library</string>
+    <string name="log_act_register_text">Зарегистрироваться</string>
+    <string name="log_act_log_btn_text">Войти</string>
+    <string name="log_act_log_edt_text">Электронная почта</string>
+    <string name="log_act_pass_edt_text">Пароль</string>
+
+    <string name="log_signup_name_text">Имя</string>
+    <string name="log_singup_address_text">Адрес</string>
+    <string name="log_signup_email_text">Электронная почта</string>
+    <string name="log_signup_mobile_number_text">Номер телефона</string>
+    <string name="log_signup_enter_password_text">Пароль</string>
+    <string name="log_signup_reenter_password_text">Подтверждение пароль</string>
+    <string name="log_signup_create_account_text">Создать аккаунт</string>
+    <string name="log_signup_signin_text">Уже зарегистрированы? Войти</string>
+
+
 </resources>

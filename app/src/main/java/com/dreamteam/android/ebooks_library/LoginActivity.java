@@ -17,10 +17,6 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
 
-  /*  @Bind(R.id.input_email)  /EditText _emailText;
-    @Bind(R.id.input_password) EditText _passwordText;
-    @Bind(R.id.btn_login) Button _loginButton;
-    @Bind(R.id.link_signup) TextView _signupLink;*/
     EditText mEmailText;
     EditText mPasswordText;
     Button mLoginButton;
@@ -30,10 +26,10 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mEmailText = (EditText) findViewById(R.id.et_input_email);
-        mPasswordText = (EditText) findViewById(R.id.et_input_password);
-        mLoginButton = (Button) findViewById(R.id.btn_login);
-        mSignupLink = (TextView) findViewById(R.id.tv_link_signup);
+        mEmailText = (EditText) findViewById(R.id.act_log_et_input_email);
+        mPasswordText = (EditText) findViewById(R.id.act_log_et_input_password);
+        mLoginButton = (Button) findViewById(R.id.act_log_btn_login);
+        mSignupLink = (TextView) findViewById(R.id.act_log_tv_link_signup);
 
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +44,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
-              /*  Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
                 finish();
-                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);*/
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
             }
         });
     }
