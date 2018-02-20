@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ebook_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/tv_display_ebook_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"/>
+        style="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/tv_display_ebook_author"
+        app:layout_constraintLeft_toLeftOf="@+id/ebook_detail"
+        app:layout_constraintTop_toTopOf="@+id/ebook_detail"
+        android:text="Мастер и маргарита"/>
+    <TextView
+        android:id="@+id/tv_display_ebook_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Base.TextAppearance.AppCompat.Medium"
+        app:layout_constraintLeft_toLeftOf="@+id/ebook_detail"
+        app:layout_constraintTop_toTopOf="@+id/ebook_detail"
+        app:layout_constraintBottom_toTopOf="@+id/ebook_detail"
+        android:textColor="#dadada"
+        android:text="М.А. Булгаков"/>
 
-</FrameLayout>
+</android.support.constraint.ConstraintLayout>
