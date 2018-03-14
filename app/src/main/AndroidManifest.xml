@@ -31,7 +31,7 @@
 
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme.Dark" />
+            android:theme="@style/AppTheme.Light" />
 
         <activity
             android:name=".SignupActivity"
