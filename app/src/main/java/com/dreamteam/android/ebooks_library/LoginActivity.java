@@ -1,7 +1,9 @@
 package com.dreamteam.android.ebooks_library;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -104,6 +106,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putBoolean("is_loginned", getResources().getBoolean(R.bool.pref_is_loginned));
+        edit.commit();
+
         mLoginButton.setEnabled(true);
         finish();
     }

@@ -26,5 +26,14 @@
         app:layout_constraintBottom_toTopOf="@+id/ebook_detail"
         android:textColor="#dadada"
         android:text="М.А. Булгаков"/>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/but_play_audio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_display_ebook_author"
+        app:layout_constraintLeft_toLeftOf="@id/ebook_detail"
+        app:layout_constraintBottom_toBottomOf="@id/ebook_detail"
+        android:padding="12dp"
+        android:text="Воспроизвести"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -13,6 +13,4 @@
     <string name="log_signup_reenter_password_text">Подтверждение пароль</string>
     <string name="log_signup_create_account_text">Создать аккаунт</string>
     <string name="log_signup_signin_text">Уже зарегистрированы? Войти</string>
-
-
 </resources>
