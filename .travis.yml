@@ -12,9 +12,9 @@ cache:
  
 env:
   global:
-   - ANDROID_API_LEVEL=27
+   - ANDROID_API_LEVEL=26
    - EMULATOR_API_LEVEL=24
-   - ANDROID_BUILD_TOOLS_VERSION=27.0.2
+   - ANDROID_BUILD_TOOLS_VERSION=26.1.0
    - ANDROID_ABI=google_apis/armeabi-v7a
    - ANDROID_TAG=google_apis
    - tools
@@ -24,8 +24,9 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-27.0.2
-    - android-27
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - android-$ANDROID_API_LEVEL
+    - android-$EMULATOR_API_LEVEL
     - extra-google-m2repository
     - extra-android-m2repository
     # Google Play Services
@@ -38,10 +39,12 @@ android:
 
     - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
     - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL
+    - sys-img-armeabi-v7a-android-$EMULATOR_API_LEVEL
     
 before_script:
-  - echo no | android create avd --force -n test -t "android-27" --abi $ANDROID_ABI --tag $ANDROID_TAG
-  - emulator -avd test -no-skin -no-audio -no-window &
+  - echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL --abi armeabi-v7a
+#  - echo no | android create avd --force -n test -t "android-26" --abi $ANDROID_ABI --tag $ANDROID_TAG
+  - emulator -avd test -no-skin -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
   
