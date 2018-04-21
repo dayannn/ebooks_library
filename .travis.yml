@@ -57,3 +57,4 @@ before_install:
 branches:
         only:
                 - master
+                - android_app
