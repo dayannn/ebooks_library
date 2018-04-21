@@ -23,10 +23,15 @@ public class EbookDetailActivity extends AppCompatActivity {
 
     private Button mPlayAudioButton;
 
+    private boolean is_playing = false;
+    MediaPlayer player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ebook_detail);
+
+        player = MediaPlayer.create(EbookDetailActivity.this, R.raw.music);
 
         mEbookInfoDisplay = findViewById(R.id.tv_display_ebook_info);
         mEbookAuthorDisplay = findViewById(R.id.tv_display_ebook_author);
@@ -47,18 +52,20 @@ public class EbookDetailActivity extends AppCompatActivity {
         }
 
 
+        // TODO: убрать костыль
         mPlayAudioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MediaPlayer mp = new MediaPlayer();
-
-                try {
-                    mp.setDataSource(getBaseContext(), Uri.parse("android.resource://com.dreamteam.ebooks_library/res/raw/music.mp3"));
-                    mp.prepare();
-                    mp.start();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            if (!is_playing) {
+                player.start();
+                mPlayAudioButton.setText("Пауза");
+                is_playing = true;
+            }
+            else {
+                player.pause();
+                mPlayAudioButton.setText("Воспроизвести");
+                is_playing = false;
+            }
             }
         });
     }
