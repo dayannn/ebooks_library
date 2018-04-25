@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
+
         mLoginButton.setEnabled(false);
 
         final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
@@ -72,8 +73,21 @@ public class LoginActivity extends AppCompatActivity {
 
         String email = mEmailText.getText().toString();
         String password = mPasswordText.getText().toString();
+        String password_md5 = MD5_converter.md5(password);
 
         // TODO: Implement your own authentication logic here.
+
+        String Url = "https://api.github.com/markdown/raw";
+        String req = "req";
+
+
+        PostString poster = new PostString();
+        try {
+            poster.postRequest(Url, req);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
