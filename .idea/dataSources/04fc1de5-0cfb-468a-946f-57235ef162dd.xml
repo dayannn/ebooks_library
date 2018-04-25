@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>12401</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <role id="3" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="4" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="5" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-04-25.04:06:11.047</IntrospectionTimestamp>
+      <IntrospectionStateNumber>595</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="6" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+    </schema>
+    <sequence id="11" parent="5" name="sessions_id_seq">
+      <ObjectId>16456</ObjectId>
+      <StateNumber>585</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="12" parent="5" name="ebooks_uid_seq">
+      <ObjectId>16395</ObjectId>
+      <StateNumber>548</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="13" parent="5" name="roles_role_id_seq">
+      <ObjectId>16422</ObjectId>
+      <StateNumber>572</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="14" parent="5" name="user_books_id_seq">
+      <ObjectId>16438</ObjectId>
+      <StateNumber>580</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="15" parent="5" name="user_roles_id_seq">
+      <ObjectId>16409</ObjectId>
+      <StateNumber>563</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="16" parent="5" name="users_uid_seq">
+      <ObjectId>16403</ObjectId>
+      <StateNumber>551</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="17" parent="5" name="ebooks">
+      <ObjectId>16397</ObjectId>
+      <StateNumber>554</StateNumber>
+    </table>
+    <table id="18" parent="5" name="roles">
+      <ObjectId>16424</ObjectId>
+      <StateNumber>574</StateNumber>
+    </table>
+    <table id="19" parent="5" name="sessions">
+      <ObjectId>16458</ObjectId>
+      <StateNumber>595</StateNumber>
+    </table>
+    <table id="20" parent="5" name="user_books">
+      <ObjectId>16440</ObjectId>
+      <StateNumber>580</StateNumber>
+    </table>
+    <table id="21" parent="5" name="user_roles">
+      <ObjectId>16411</ObjectId>
+      <StateNumber>574</StateNumber>
+    </table>
+    <table id="22" parent="5" name="users">
+      <ObjectId>16387</ObjectId>
+      <StateNumber>584</StateNumber>
+    </table>
+    <column id="23" parent="17" name="book_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>558</StateNumber>
+      <DefaultExpression>nextval(&apos;ebooks_uid_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>ebooks_uid_seq</SequenceName>
+    </column>
+    <column id="24" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>554</StateNumber>
+    </column>
+    <column id="25" parent="17" name="autor">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>555</StateNumber>
+    </column>
+    <index id="26" parent="17" name="ebooks_pkey">
+      <ObjectId>16401</ObjectId>
+      <ColNames>book_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="27" parent="17" name="ebooks_pkey">
+      <ObjectId>16402</ObjectId>
+      <ColNames>book_id</ColNames>
+      <UnderlyingIndexName>ebooks_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="18" name="role_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>572</StateNumber>
+      <DefaultExpression>nextval(&apos;roles_role_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>roles_role_id_seq</SequenceName>
+    </column>
+    <column id="29" parent="18" name="role_name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>572</StateNumber>
+    </column>
+    <column id="30" parent="18" name="permissions">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>572</StateNumber>
+    </column>
+    <index id="31" parent="18" name="roles_pkey">
+      <ObjectId>16431</ObjectId>
+      <ColNames>role_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="18" name="roles_pkey">
+      <ObjectId>16432</ObjectId>
+      <ColNames>role_id</ColNames>
+      <UnderlyingIndexName>roles_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>585</StateNumber>
+      <DefaultExpression>nextval(&apos;sessions_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>sessions_id_seq</SequenceName>
+    </column>
+    <column id="34" parent="19" name="uid">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>585</StateNumber>
+    </column>
+    <column id="35" parent="19" name="session_id">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>589</StateNumber>
+    </column>
+    <column id="36" parent="19" name="session_time">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>595</StateNumber>
+    </column>
+    <index id="37" parent="19" name="sessions_id_uindex">
+      <ObjectId>16464</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="38" parent="19" name="sessions_pkey">
+      <ObjectId>16462</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="19" name="sessions_pkey">
+      <ObjectId>16463</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sessions_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>580</StateNumber>
+      <DefaultExpression>nextval(&apos;user_books_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>user_books_id_seq</SequenceName>
+    </column>
+    <column id="41" parent="20" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>580</StateNumber>
+    </column>
+    <column id="42" parent="20" name="book_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>580</StateNumber>
+    </column>
+    <column id="43" parent="20" name="buy_time">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>580</StateNumber>
+    </column>
+    <index id="44" parent="20" name="user_books_pkey">
+      <ObjectId>16444</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="20" name="user_books_pkey">
+      <ObjectId>16445</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>user_books_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>563</StateNumber>
+      <DefaultExpression>nextval(&apos;user_roles_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>user_roles_id_seq</SequenceName>
+    </column>
+    <column id="47" parent="21" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>563</StateNumber>
+    </column>
+    <column id="48" parent="21" name="role">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>563</StateNumber>
+    </column>
+    <index id="49" parent="21" name="user_roles_pkey">
+      <ObjectId>16415</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="50" parent="21" name="user_roles_pkey">
+      <ObjectId>16416</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>user_roles_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="51" parent="21" name="user_roles_users_user_id_fk">
+      <ObjectId>16417</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16387</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_t_pkey</RefKeyName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="52" parent="21" name="user_roles_roles_role_id_fk">
+      <ObjectId>16433</ObjectId>
+      <ColNames>role</ColNames>
+      <RefTableId>16424</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>roles</RefTableName>
+      <RefKeyName>roles_pkey</RefKeyName>
+      <RefColNames>role_id</RefColNames>
+    </foreign-key>
+    <column id="53" parent="22" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>559</StateNumber>
+      <DefaultExpression>nextval(&apos;users_uid_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>users_uid_seq</SequenceName>
+    </column>
+    <column id="54" parent="22" name="username">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>544</StateNumber>
+    </column>
+    <column id="55" parent="22" name="pass">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>544</StateNumber>
+    </column>
+    <index id="56" parent="22" name="users_t_pkey">
+      <ObjectId>16393</ObjectId>
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="22" name="users_t_pkey">
+      <ObjectId>16394</ObjectId>
+      <ColNames>user_id</ColNames>
+      <UnderlyingIndexName>users_t_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
